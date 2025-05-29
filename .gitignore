@@ -1,0 +1,54 @@
+# Node.js dependencies
+node_modules/
+build/
+dist/
+
+# Truffle build artifacts
+build/
+*.log
+
+# Local development files
+.env
+.DS_Store
+*.local
+*.env.*
+
+# Compiled contract artifacts
+**/contracts/*.json
+
+# System files
+Thumbs.db
+*.swp
+*.swo
+
+# VSCode and IDE settings
+.vscode/
+.idea/
+
+# Yarn and npm logs
+yarn-error.log
+npm-debug.log
+
+# Coverage files
+coverage/
+
+# Test files
+test/.gitkeep
+
+# Mac system files
+.Spotlight-V100
+.Trashes
+
+# OS-specific metadata
+ehthumbs.db
+Icon?
+
+# Cache folders
+.cache/
+.tmp/
+
+# Netlify cache
+.netlify/
+
+# Ignore screenshots (optional)
+Screenshots/

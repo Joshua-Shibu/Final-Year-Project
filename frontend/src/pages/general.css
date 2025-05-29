@@ -1,0 +1,400 @@
+/* Modernized and Enhanced general.css */
+:root {
+  /* Color Palette */
+  --primary: #3F51B5;
+  --primary-hover: #303F9F;
+  --primary-light: rgba(0, 128, 255, 0.1);
+  --secondary: #f5f7fa;
+  --accent: #00c853;
+  --text: #333333;
+  --text-light: #666666;
+  --white: #ffffff;
+  --border: #e0e0e0;
+  --error: #d32f2f;
+
+  /* Design Tokens */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --transition: all 0.3s ease;
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--secondary);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Layout Utilities */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Navbar - Enhanced */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: var(--white);
+  padding: 1rem 0;
+  box-shadow: var(--shadow-sm);
+  z-index: 1000;
+}
+
+.nav_main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav_main a {
+  color: var(--text);
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+}
+
+.nav_main a:hover,
+.nav_main a:focus {
+  color: var(--primary);
+  background-color: var(--primary-light);
+}
+
+.nav_main button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+/* Sidebar - Enhanced */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 250px;
+  background: var(--white);
+  box-shadow: var(--shadow-md);
+  padding-top: 5rem;
+  transform: translateX(0);
+  transition: var(--transition);
+  z-index: 900;
+}
+
+.sidebar.collapsed {
+  transform: translateX(-100%);
+}
+
+#sidebar-wrapper {
+  height: 100%;
+  overflow-y: auto;
+  padding-bottom: 2rem;
+}
+
+.sidebar-heading {
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Cards - Enhanced */
+.card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 2rem;
+  margin: 1.5rem auto;
+  width: 100%;
+  max-width: 800px;
+  transition: var(--transition);
+}
+
+.card h2{
+  text-align: center;
+  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.card-header {
+  margin-bottom: 1.5rem;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem;
+}
+
+.card-body {
+  padding: 0;
+}
+
+/* Form Elements - Enhanced */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font: inherit;
+  transition: var(--transition);
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--primary-light);
+}
+
+/* Buttons - Enhanced */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  font: inherit;
+  font-weight: 500;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-block {
+  display: flex;
+  width: 100%;
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+
+/* Responsive Breakpoints */
+@media (max-width: 992px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+  
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  #page-content-wrapper {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 1.5rem;
+    margin: 1rem auto;
+  }
+
+  .smallcard {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .smallcard div {
+    padding-right: 0;
+    width: 100%;
+  }
+}
+
+/* Animation Classes */
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Add these to your existing general.css */
+/* Medical Image Styling */
+.medical-illustration {
+  max-width: 150px;
+  margin: 2rem auto;
+  display: block;
+}
+
+/* Form Field Enhancements */
+.MuiOutlinedInput-root {
+  border-radius: 8px !important;
+}
+
+.MuiFormLabel-root {
+  color: var(--text) !important;
+}
+
+.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: var(--primary) !important;
+}
+
+/* Success Message */
+.success-message {
+  color: var(--accent) !important;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .registration-card {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+  
+  .left-section, .right-section {
+    padding: 1.5rem;
+  }
+  
+  .medical-image {
+    margin: 1.5rem auto;
+  }
+}
+/* Add these to your existing general.css */
+/* Login Page Specific Styles */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background-color: var(--secondary);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 500px;
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  background: var(--white);
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-title {
+  color: var(--text);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.login-subtitle {
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+}
+
+.wallet-button {
+  margin-bottom: 1.5rem;
+  padding: 10px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  text-transform: none;
+  transition: var(--transition);
+}
+
+.wallet-button:hover {
+  background-color: var(--primary-light);
+}
+
+.login-button {
+  padding: 12px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  text-transform: none;
+  background-color: var(--primary);
+  color: var(--white);
+  margin-top: 1rem;
+  transition: var(--transition);
+}
+
+.login-button:hover {
+  background-color: var(--primary-hover);
+}
+
+.medical-icon {
+  width: 100px;
+  margin: 1.5rem auto;
+  display: block;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .login-card {
+    padding: 1.5rem;
+  }
+  
+  .login-title {
+    font-size: 1.5rem;
+  }
+}
